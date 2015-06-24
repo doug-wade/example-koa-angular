@@ -14,6 +14,10 @@ technologies = [
   },
 
   {
+    "name": "Coffeescript",
+    "link": "http://coffeescript.org/"
+  },
+  {
     "name": "gulp"
     "link": "http://gulpjs.com"
   },
