@@ -1,5 +1,5 @@
 # example-koa-angular
-[![dependencies](https://david-dm.org/prekolna/generator-koa-angular.svg)](https://david-dm.org/prekolna/generator-koa-angular)
+[![dependencies](https://david-dm.org/prekolna/example-koa-angular.svg)](https://david-dm.org/prekolna/example-koa-angular)
 
 Generated using the [Yeoman](http://yeoman.io/) generator [koa-angular](https://github.com/prekolna/generator-koa-angular) (still under development)
 
