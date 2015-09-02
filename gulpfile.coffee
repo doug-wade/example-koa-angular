@@ -1,13 +1,12 @@
 bower      = require "gulp-bower"
 coffee     = require "gulp-coffee"
 concat     = require "gulp-concat"
+david      = require "gulp-david"
 del        = require "del"
 gulp       = require "gulp"
 imagemin   = require "gulp-imagemin"
 install    = require "gulp-install"
-
 jade       = require "gulp-jade"
-
 karma      = require "karma"
 livereload = require "gulp-livereload"
 mocha      = require "gulp-mocha-co"
@@ -16,9 +15,7 @@ nodemon    = require "gulp-nodemon"
 pngquant   = require "imagemin-pngquant"
 protractor = require("gulp-protractor").protractor
 ptor       = require "protractor"
-
 stylus     = require "gulp-stylus"
-
 uglify     = require "gulp-uglify"
 
 paths =
@@ -39,9 +36,7 @@ paths =
 
 gulp.task "angular-views", ->
   gulp.src paths.partials
-
     .pipe jade()
-
     .pipe ngHtml2Js(moduleName: "example-koa-angular", prefix: "/partials/")
     .pipe concat "angular-views.min.js"
     .pipe gulp.dest paths.public + "/scripts"
@@ -54,6 +49,11 @@ gulp.task "bower", ->
 gulp.task "clean", ->
   del([paths.build, paths.public], (err, deletedFiles) ->
     console.log('Cleaned files:', deletedFiles.join(', ')))
+
+gulp.task "checkDependencies", ->
+  gulp.src "package.json"
+    .pipe david()
+    .pipe david.reporter
 
 gulp.task "images", ->
   gulp.src paths.images
@@ -86,15 +86,7 @@ gulp.task "server", ->
   nodemon
     script: paths.build + "/app.js"
     nodeArgs: [ "--harmony" ]
-    ignore: [
-      "./bower_components/**"
-      "./node_modules/**"
-      "./public/**"
-      "./src/**"
-      "./test/**"
-      "./views/**"
-      "./images/**"
-    ]
+    ignore: ["images", "node_modules", "public", "server", "styles", "test", "views", "webapp"]
 
 gulp.task "server-scripts", ->
   gulp.src paths.server
@@ -111,17 +103,13 @@ gulp.task "scripts", ->
 
 gulp.task "styles", ->
   gulp.src paths.styles
-
     .pipe stylus()
-
     .pipe gulp.dest paths.public + "/styles"
     .pipe livereload()
 
 gulp.task "views", ->
   gulp.src paths.views
-
     .pipe jade()
-
     .pipe gulp.dest paths.public
     .pipe livereload()
 
