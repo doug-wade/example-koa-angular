@@ -1,5 +1,8 @@
 const technologies = [
   {
+    "name": "Babel",
+    "link": "https://babeljs.io/"
+  }, {
     "name": "gulp",
     "link": "http://gulpjs.com"
   }, {
