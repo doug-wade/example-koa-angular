@@ -15,8 +15,8 @@ module.exports = function(config) {
     files: [
       "public/vendor/angular/angular.js",
       "public/vendor/angular-mocks/angular-mocks.js",
-      "webapp/**/*.coffee",
-      "test/unit/**/*.coffee"
+      "webapp/**/*.js",
+      "test/unit/**/*.js"
     ],
 
     // list of files to exclude
@@ -48,25 +48,7 @@ module.exports = function(config) {
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
 
-    singleRun: false,
-
-    // preprocess matching files before serving them to the browser
-    // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-    preprocessors: {
-      "**/*.coffee": ["coffee"]
-    },
-
-    coffeePreprocessor: {
-      // options passed to the coffee compiler
-      options: {
-        bare: true,
-        sourceMap: false
-      },
-      // transforming the filenames
-      transformPath: function(path) {
-        return path.replace(/\.coffee$/, ".js");
-      }
-    }
+    singleRun: false
   });
 
 };
