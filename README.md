@@ -1,4 +1,4 @@
-Generated using the [Yeoman](http://yeoman.io/) generator [koa-angular](https://github.com/prekolna/generator-koa-angular) (still under development)
+[![dependencies](https://david-dm.org/doug-wade/example-koa-angular.svg)](https://david-dm.org/doug-wade/example-koa-angular)Generated using the [Yeoman](http://yeoman.io/) generator [koa-angular](https://github.com/doug-wade/generator-koa-angular)
 
 # Prerequisites
 You must install:
