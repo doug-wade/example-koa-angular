@@ -2,8 +2,7 @@ doctype html
 html(lang="en")
   head
     title example-koa-angular
-    link(rel="stylesheet", type="text/css", href="vendor/bootstrap/dist/css/bootstrap.css")
-    link(rel="stylesheet", type="text/css", href="styles/styles.css")
+    link(rel="stylesheet", type="text/css", href="stylesheets/styles.css")
   body(ng-app="example-koa-angular")
     nav(class="navbar navbar-default")
       div(class="container-fluid")
@@ -19,6 +18,9 @@ html(lang="en")
       ul
         li(ng-repeat="technology in technologies")
           a(class="btn btn-link", href="{{ technology.link }}") {{ technology.name }}          
-    script(src="/vendor/jquery/dist/jquery.js")
-    script(src="/vendor/angular/angular.js")  
-    script(src="/scripts/all.js")
+    script(src="vendor/angular/bundles/angular2-polyfills.js")
+    script(src="vendor/rxjs/bundles/Rx.umd.js")
+    script(src="vendor/angular/bundles/angular2-all.umd.js")
+
+    script(src="scripts/app.component.js")
+    script(src="scripts/boot.js")
