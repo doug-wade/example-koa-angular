@@ -82,7 +82,7 @@
     "koa-session": "^3.2.0",
     "koa-static": "^1.4.3",
     "lodash.defaults": "^3.1.1",
-    "mocha": "^2.2.4",
+    "mocha": "^4.0.0",
     "qs": "6.0.1",
     "then-jade": "^2.4.1",
     "snyk": "^1.88.1"
