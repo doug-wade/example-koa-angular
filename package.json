@@ -70,7 +70,7 @@
     "gulp-install": "^0.6.0",
     "gulp-ng-html2js": "^0.2.0",
     "gulp-stylus": "^2.0.1",
-    "imagemin-pngquant": "^4.0.0",
+    "imagemin-pngquant": "^5.1.0",
     "koa": "1.1.2",
     "koa-bodyparser": "^2.0.0",
     "koa-bunyan": "^0.0.2",
